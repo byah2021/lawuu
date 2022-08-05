@@ -33,7 +33,13 @@
 
   <link rel="stylesheet" href="css/style.css">
   <title>lawuu &mdash; 这是我的个人静态网站</title>
-
+	  <script type="text/javascript">
+function toggleMute() {
+   var myAudio = document.getElementById('audio_playo24');
+   myAudio.muted = !myAudio.muted;
+}
+  </script>
+<!--控制音乐暂停与否-->
 
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
@@ -64,7 +70,7 @@
           <li><a href="#section-about" class="nav-link">本人</a></li>
           <li><a href="#section-testimonial" class="nav-link">图介</a></li>
           <li><a href="#section-blog" class="nav-link">社交</a></li>
-          <!--<li><a href="#section-contact" class="nav-link">联系</a></li>-->
+          <li><a href="javascript:void(0);" onclick="toggleMute()">开/关</a></li>
         </ul>
         <ul class="social js-clone-nav">
           <li><a href="https://untree.co/license/" target="_blank">技术支持</a></li>
@@ -525,6 +531,7 @@
           <div class="col-md-12 text-center py-5">
             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; 技术支持：<a href="https://untree.co" target="_blank">Untree.co</a> <!-- License information: https://untree.co/license/ -->
             </p>
+	<audio id="audio_playo24" autoplay="true" hidden controls><source src="周杰伦 - 红颜如霜.mp3" type="audio/mpeg"></audio>
           </div>
         </div>
       </div>
