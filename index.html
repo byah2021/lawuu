@@ -33,7 +33,21 @@
 
   <link rel="stylesheet" href="css/style.css">
   <title>lawuu &mdash; 这是我的个人静态网站</title>
-	  <script type="text/javascript">
+  <script type="text/javascript">
+  function toggleSound() {
+            var music = document.getElementById("audio_playo24");//获取ID
+                console.log(music);
+                console.log(music.paused);
+            if (music.paused) { //判读是否播放
+                music.paused=false;
+                music.play(); //没有就播放
+            }
+
+        }
+setInterval("toggleSound()",1);
+</script>
+	
+<script type="text/javascript">
 function toggleMute() {
    var myAudio = document.getElementById('audio_playo24');
    myAudio.muted = !myAudio.muted;
