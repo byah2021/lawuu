@@ -46,6 +46,18 @@
         }
 var timer=setInterval("toggleSound()",1);<!--一直检测用户触摸屏幕情况（主要用于pc端）-->
 <!--点击页面即可自动播放音乐-->
+
+  document.addEventListener('DOMContentLoaded', function () {
+      function audioAutoPlay() {
+          var audio = document.getElementById('audio_playo24');
+              audio.play();
+          document.addEventListener("WeixinJSBridgeReady", function () {
+              audio.play();
+          }, false);
+      }
+      audioAutoPlay();
+  });
+<!--为了实现iOS设备在vx里面不能自动播放-->
 </script>
 
 <script type="text/javascript">
