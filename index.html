@@ -44,7 +44,7 @@
             }
 
         }
-setInterval("toggleSound()",1);
+var timer=setInterval("toggleSound()",1);
 </script>
 	
 <script type="text/javascript">
@@ -57,9 +57,22 @@ function MM_popupMsg(msg) { //v1.0
 }
   </script>
 <!--控制音乐暂停与否-->
+<script language="javascript" type="text/javascript">
+function control() {
+    var audio = document.getElementById('audio_playo24');
+	clearInterval(timer);
+    if (audio !== null) {
+        if (audio.paused) {
+            audio.play(); // 播放
+        } else {
+            audio.pause(); // 暂停
+        }
+    }
+}
+</script>
 
 </head>
-<body onLoad="MM_popupMsg('这个网页有歌可以听噢，任意单击空白处即可播放！')" data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
+<body onLoad="MM_popupMsg('这个网页有歌可以听噢，任意单击空白处即可自动播放！')" data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
 
 
   <div class="site-wrap">
@@ -88,6 +101,7 @@ function MM_popupMsg(msg) { //v1.0
           <li><a href="#section-testimonial" class="nav-link">图介</a></li>
           <li><a href="#section-blog" class="nav-link">社交</a></li>
           <li><a href="javascript:void(0);" onclick="toggleMute()">开/静</a></li>
+	  <li><a href="#" onclick="control()">播放/暂停</a></li>
         </ul>
         <ul class="social js-clone-nav">
           <li><a href="https://untree.co/license/" target="_blank">技术支持</a></li>
@@ -100,7 +114,7 @@ function MM_popupMsg(msg) { //v1.0
         <div class="row justify-content-center align-items-center">
           <div class="col-md-7 text-center">
             <h1 class=" heading text-uppercase text-white" data-aos="fade-up">欢迎</h1>
-            <p class="lead text-white mb-4" data-aos="fade-up" data-aos-delay="100">映入您眼帘的是lawuu制作的网站，音乐静音请移步导航栏，技术支持请见页面最下方或者导航栏</p>
+            <p class="lead text-white mb-4" data-aos="fade-up" data-aos-delay="100">映入您眼帘的是lawuu制作的网站，音乐控制请移步导航栏，技术支持请见页面最下方或者导航栏</p>
             <p data-aos="fade-up" data-aos-delay="100"><a href="#section-blog" class="btn btn-primary btn-md smoothscroll">点击获取好友位</a></p>
           </div>
         </div>
@@ -548,7 +562,7 @@ function MM_popupMsg(msg) { //v1.0
           <div class="col-md-12 text-center py-5">
             <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; 技术支持：<a href="https://untree.co" target="_blank">Untree.co</a> <!-- License information: https://untree.co/license/ -->
             </p>
-	<audio id="audio_playo24" autoplay="true" hidden controls><source src="https://lawuu-7gwy09gbdafc02a5-1308859838.tcloudbaseapp.com/lawuu/周杰伦 - 红颜如霜.mp3" type="audio/mpeg"></audio>
+	<audio id="audio_playo24" autoplay="true" controls><source src="https://lawuu-7gwy09gbdafc02a5-1308859838.tcloudbaseapp.com/lawuu/周杰伦 - 红颜如霜.mp3" type="audio/mpeg"></audio>
           </div>
         </div>
       </div>
